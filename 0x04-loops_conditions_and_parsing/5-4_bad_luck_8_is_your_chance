@@ -9,7 +9,7 @@ do
   if (( i == j ))
   then
   echo bad luck
-  elif [ i == k ]
+  elif (( i == k ))
   then
   echo good luck
   else
