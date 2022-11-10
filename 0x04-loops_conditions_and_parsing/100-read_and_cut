@@ -5,4 +5,4 @@ FILENAME="/etc/passwd"
 while IFS=: read -r username userid homedir
 do
   echo "$username, $userid, $homedir"
-done
+done < $FILENAME
