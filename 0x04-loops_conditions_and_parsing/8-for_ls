@@ -1,1 +1,10 @@
-i
+#!/usr/bin/env bash
+#This script displays the content of the current directory in a list format
+
+for file in *;
+do
+    if [ -d "$file" ];
+    then
+        echo "$file"
+    fi
+done
