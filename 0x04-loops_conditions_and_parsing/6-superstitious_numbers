@@ -4,7 +4,7 @@
 i=1
 j=4
 k=8
-while [ $i -le 10 ]
+while [ $i -le 20 ]
 do
   echo $i
   case $i in
