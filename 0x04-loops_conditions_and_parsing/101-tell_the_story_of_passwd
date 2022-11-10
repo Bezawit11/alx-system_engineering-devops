@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Bash script that displays the content of the file /etc/passwd
 
-while IFS= read -r line
+while IFS= read -r username password userid groupid comment homedir cmdshell
 do 
-  echo "$line"
+  echo "The user $username is part of the $groupid gang, lives in $homedir and rides $cmdshell. $userid's place is protected by the passcode $password, more info about the user here: $userid"
 done < "/etc/passwd"
