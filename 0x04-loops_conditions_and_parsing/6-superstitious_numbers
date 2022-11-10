@@ -2,8 +2,6 @@
 #This script is displaying "Best School" 10 times
 
 i=1
-j=4
-k=8
 while [ $i -le 20 ]
 do
   echo $i
