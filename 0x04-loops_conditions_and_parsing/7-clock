@@ -10,5 +10,7 @@ do
   do 
     echo $j
     ((j++))
+  done
+  j=1
   ((i++))
 done
