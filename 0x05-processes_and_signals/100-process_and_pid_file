@@ -2,8 +2,14 @@
 #aaaaa
 
 touch /var/run/myscript.pid
-trap "echo I hate the kill command" SIGTERM
+delete_and_exit()
+{
+   rm /var/run/holbertonscript.pid;
+   exit
+}
+trap "echo 'I hate the kill command'; delete_and_exit" SIGTERM
 trap "echo Y U no love me?!" SIGINT
+trap "delete_and_exit" SIGQUIT
 while true
 do
         echo "To infinity and beyond"
