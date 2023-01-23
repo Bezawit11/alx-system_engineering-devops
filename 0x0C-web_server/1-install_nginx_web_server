@@ -7,5 +7,6 @@
 sudo apt-get update
 sudo apt-get install nginx
 service nginx start
+ufw allow port 80
 echo "Holberton School\n" | sudo tee /var/www/html/index.nginx-debian.html
 service nginx restart
