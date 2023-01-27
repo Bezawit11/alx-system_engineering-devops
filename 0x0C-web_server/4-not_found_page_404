@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# a custom 404 page that contains the string Ceci n'est pas une page
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
+
+new_config=\
+"server {
+        listen 80 default_server;
+        server_name _;
+        location / {
+                try_files \$uri \$uri/ =404;
+        }
+        error_page 404 /custom-404.html;
+        location = /custom-404.html{
+                root /data/www;
+                internal;
+        }
+        
+        if (\$request_filename ~ redirect_me){
+            rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+        }
+}
+"
+
+echo "$new_config" > /etc/nginx/sites-available/default
+if [ "$(pgrep nginx)" -le 0 ];
+then
+    service nginx start
+else
+    service nginx restart
+fi;
