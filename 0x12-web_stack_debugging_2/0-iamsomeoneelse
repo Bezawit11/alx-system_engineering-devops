@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # sth
-su $1
+su "$1"
 whoami
