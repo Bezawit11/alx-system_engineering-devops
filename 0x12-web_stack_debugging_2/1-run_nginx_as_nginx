@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # changing from root to nginx user
-sed 's/#user www-data;/user nginx;/1' /etc/nginx/nginx.conf
-sudo systemctl reload nginx
+sed -i "1i user nginx;" /etc/nginx/nginx.conf
+sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
+service nginx restart
