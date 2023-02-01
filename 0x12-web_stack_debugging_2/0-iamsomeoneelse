@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # sth
-su "$1"
-whoami
+if [[ "$(whoami)" != "$1" ]]
+then
+echo "$1"
+fi
