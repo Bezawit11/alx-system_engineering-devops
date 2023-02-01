@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# changing from root to nginx user
+echo "user nginx;" >> /etc/nginx/nginx.conf
