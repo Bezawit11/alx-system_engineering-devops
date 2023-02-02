@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 # changing from root to nginx user
 sudo systemctl stop apache2
+chmod 644 /etc/nginx/nginx.conf
 sed -i "1i user nginx;" /etc/nginx/nginx.conf
 sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
-sudo setfacl -R -m u:nginx:rwx /var/log/nginx
-sudo setfacl -m u:nginx:rwx /run
-sudo chown -R nginx:nginx /usr/share/nginx/
 sudo nginx -s reload
 sudo service nginx restart
