@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # changing from root to nginx user
 pkill -f apache2
+sudo service nginx start
 sed -i "1i user nginx;" /etc/nginx/nginx.conf
 sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
-sudo -u nginx service nginx start
+sudo service nginx restart
