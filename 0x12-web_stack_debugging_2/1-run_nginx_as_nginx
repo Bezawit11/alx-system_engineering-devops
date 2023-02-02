@@ -3,7 +3,6 @@
 sudo systemctl stop apache2
 sed -i "1i user nginx;" /etc/nginx/nginx.conf
 sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
-find /etc/nginx -type d | xargs chmod 750
 find /etc/nginx -type f | xargs chmod 640
 sudo nginx -s reload
 sudo service nginx restart
