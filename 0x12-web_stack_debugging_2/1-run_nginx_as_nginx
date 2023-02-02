@@ -2,4 +2,4 @@
 # changing from root to nginx user
 sed -i "1i user nginx;" /etc/nginx/nginx.conf
 sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
-sudo systemctl restart nginx
+sudo nginx -s reload
