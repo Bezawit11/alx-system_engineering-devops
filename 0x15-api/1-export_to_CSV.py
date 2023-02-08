@@ -19,6 +19,7 @@ if __name__ == "__main__":
                     r.append(v)
                 if k == "userId":
                     filename = "{}.csv".format(v)
+                    r.append(n)
             rows.append(r)
             r = []
         
