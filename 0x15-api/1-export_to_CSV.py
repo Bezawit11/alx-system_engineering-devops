@@ -20,8 +20,8 @@ if __name__ == "__main__":
                 if k == "userId":
                     filename = "{}.csv".format(v)
                     r.append(n)
-            rows.append(r)
-            r = []
+        rows.append(r)
+        r = []
         
         #"USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"
         with open(filename, 'w') as csvfile:
