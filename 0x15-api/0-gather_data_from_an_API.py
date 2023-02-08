@@ -8,7 +8,7 @@ if __name__ == "__main__":
     n = response.json().get("name")
     if n is not None:
         all_tasks = requests.get(
-                "{}users/todos?userId={}".format(
+                "{}todos?userId={}".format(
                     api_url, argv[1])).json()
         a = len(all_tasks)
         count = 0
