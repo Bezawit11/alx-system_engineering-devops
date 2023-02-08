@@ -6,6 +6,7 @@ from sys import argv
 if __name__ == "__main__":
     api_url = "https://jsonplaceholder.typicode.com/"
     response = requests.get("https://jsonplaceholder.typicode.com/users/{}".format(argv[1]))
+    n = response.json().get('username')
     filename = "{}.csv".format(argv[1])
     all_tasks = requests.get(
             "{}todos?userId={}".format(
@@ -14,6 +15,6 @@ if __name__ == "__main__":
     with open(filename, 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for i in all_tasks:
-            csvwriter.writerow([str(i.get('userId')), response.get('username'),
+            csvwriter.writerow([str(i.get('userId')), n,
                                 str(i.get('completed')), i.get('title')])
             
