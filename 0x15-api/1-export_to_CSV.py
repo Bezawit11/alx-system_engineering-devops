@@ -12,9 +12,8 @@ if __name__ == "__main__":
         all_tasks = requests.get(
                 "{}todos?userId={}".format(
                     api_url, argv[1])).json()
-        
         #"USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"
         with open(filename, 'w', newline='') as csvfile:
             csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
             for i in all_tasks:
-                csvwriter.writerow([int(argv[1]), n, i.get('completed'), i.get('title')])
+                csvwriter.writerow([argv[1], n, str(i.get('completed')), i.get('title')])
