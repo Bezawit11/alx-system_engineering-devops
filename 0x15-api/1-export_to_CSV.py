@@ -7,7 +7,7 @@ if __name__ == "__main__":
     api_url = "https://jsonplaceholder.typicode.com/"
     user = requests.get(api_url, verify=False).json()
     response = requests.get("{}users/{}".format(api_url, argv[1]))
-    n = user.get('username')
+    n = user.get('name')
     if n is not None:
         all_tasks = requests.get(
                 "{}todos?userId={}".format(
