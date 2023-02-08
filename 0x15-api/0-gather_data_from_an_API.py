@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import requests
 import sys
 api_url = "https://jsonplaceholder.typicode.com/todos/" + str(sys.argv[1])
