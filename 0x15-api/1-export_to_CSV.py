@@ -29,6 +29,6 @@ if __name__ == "__main__":
         
         #"USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"
         with open(filename, 'w') as csvfile:
-            csvwriter = csv.writer(csvfile)
+            csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
             csvwriter.writerows(rows)
 
