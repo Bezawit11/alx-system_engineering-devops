@@ -5,7 +5,7 @@ import requests
 from sys import argv
 if __name__ == "__main__":
     api_url = "https://jsonplaceholder.typicode.com/"
-    response = requests.get("{}users/{}".format(api_url, argv[1]))
+    response = requests.get("https://jsonplaceholder.typicode.com/users/{}".format(argv[1]))
     n = response.json().get("name")
     if n is not None:
         filename = "{}.csv".format(argv[1])
