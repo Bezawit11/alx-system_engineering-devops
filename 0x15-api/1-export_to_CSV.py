@@ -16,4 +16,4 @@ if __name__ == "__main__":
         with open("{}.csv".format(argv[1]), 'w') as csvfile:
             csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
             for i in all_tasks:
-                csvwriter.writerow("[i.get("userId"), n, i.get("completed"), i.get("title"))
+                csvwriter.writerow([i.get("userId"), n, i.get("completed"), i.get("title")])
