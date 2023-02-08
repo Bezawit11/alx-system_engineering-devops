@@ -6,7 +6,7 @@ from sys import argv
 if __name__ == "__main__":
     api_url = "https://jsonplaceholder.typicode.com/"
     response = requests.get("https://jsonplaceholder.typicode.com/users/{}".format(argv[1]))
-    n = response.json().get("name")
+    n = response.json().get("username")
     if n is not None:
         filename = "{}.csv".format(argv[1])
         all_tasks = requests.get(
