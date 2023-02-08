@@ -20,10 +20,10 @@ if __name__ == "__main__":
                 if k == "userId":
                     filename = "{}.csv".format(v)
                     r.append(n)
-            h = r[3]
-            m = r[2]
-            r[2] = h
-            r[3] = m
+            #h = r[3]
+            #m = r[2]
+            #r[2] = h
+            #r[3] = m
             rows.append(r)
             r = []
         
