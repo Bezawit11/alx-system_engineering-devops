@@ -19,4 +19,4 @@ if __name__ == "__main__":
                 comp.append(i)
         print("Employee {} is done with tasks({}/{}):".format(n, count, a))
         for t in comp:
-            print("\t {}".format(t["completed"]))
+            print("\t {}".format(t["title"]))
