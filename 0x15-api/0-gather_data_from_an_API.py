@@ -16,6 +16,6 @@ if __name__ == "__main__":
             if i["completed"] is True:
                 count += 1
                 comp.append(i)
-        print("Employee {} is done with tasks({}/{}):".format(n, str(count), a)
+        print("Employee {} is done with tasks({}/{}):".format(n, str(count), a))
         for t in comp:
             print("\t {}".format(t["completed"]))
