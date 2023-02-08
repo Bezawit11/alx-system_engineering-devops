@@ -8,7 +8,7 @@ if __name__ == "__main__":
     if n is not None:
         all_tasks = requests.get(
                 "{}users/todos?userId={}".format(
-                    url, argv[1])).json()
+                    api_url, argv[1])).json()
         a = len(all_tasks)
         count = 0
         comp = []
