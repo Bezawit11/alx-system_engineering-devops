@@ -3,12 +3,12 @@ import requests
 import sys
 if __name__ == "__main__":
     api_url = "https://jsonplaceholder.typicode.com/"
-    response = requests.get("{}users/{}".format(api_url, sys.argv[0]))
+    response = requests.get("{}users/{}".format(api_url, sys.argv[1]))
     n = response.json().get("name")
     if n is not None:
         all_tasks = requests.get(
                 "{}users/todos?userId={}".format(
-                    url, user)).json()
+                    url, sys.argv[1])).json()
         a = len(all_tasks)
         count = 0
         comp = []
