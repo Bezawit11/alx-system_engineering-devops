@@ -5,8 +5,8 @@ import requests
 from sys import argv
 if __name__ == "__main__":
     api_url = "https://jsonplaceholder.typicode.com/"
-    response = requests.get("https://jsonplaceholder.typicode.com/
-				users?id={}".format(argv[1]))
+    response = requests.get("https://jsonplaceholder.typicode.com/users?id={}".
+				format(argv[1]))
     n = response.json()[0]['username']
     filename = "{}.csv".format(argv[1])
     all_tasks = requests.get(
