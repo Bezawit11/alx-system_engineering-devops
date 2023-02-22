@@ -18,7 +18,7 @@ if __name__ == "__main__":
             k = {'username': n, 'title': i['title'], 'completed': i['completed']}
             j.append(k)
         c = a + 1
-        dictionary = {c: j}
+        dictionary.update({c: j})
         j = []
     filename = "todo_all_employees.json"
     with open(filename, 'w', newline='') as jsonfile:
