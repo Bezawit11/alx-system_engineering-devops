@@ -7,8 +7,8 @@ if __name__ == "__main__":
     api_url = "https://jsonplaceholder.typicode.com/"
     response = requests.get("https://jsonplaceholder.typicode.com/users")
     dictionary = {}
-    for a in range(len(response.json())):
-        n = response.json()[a]['username']
+    for a in range(1, len(response.json()) + 1):
+        n = response.json()[a - 1]['username']
         all_tasks = requests.get(
             "{}todos?userId={}".format(
                 api_url, a)).json()
@@ -17,8 +17,7 @@ if __name__ == "__main__":
             u = i['userId']
             k = {'username': n, 'title': i['title'], 'completed': i['completed']}
             j.append(k)
-        c = a + 1
-        dictionary.update({c: j})
+        dictionary.update({a: j})
         j = []
     filename = "todo_all_employees.json"
     with open(filename, 'w', newline='') as jsonfile:
