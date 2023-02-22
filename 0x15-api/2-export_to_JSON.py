@@ -16,7 +16,7 @@ if __name__ == "__main__":
     for i in all_tasks:
         a = i['userId']
         k = {'task': i['title'], 'completed': i['completed'], 'username': n}
-	j.append(k)
+        j.append(k)
     dictionary = {a: j}
     with open(filename, 'w', newline='') as jsonfile:
         json.dump(dictionary, jsonfile)
