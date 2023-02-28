@@ -18,4 +18,5 @@ v1.0.0 (by /u/Jazzlike_Day2550)'}, allow_redirects=False)
         try:
             print(i.get("data").get("title"))
         except:
+            print("here")
             print(i.get("data").get("title").encode())
