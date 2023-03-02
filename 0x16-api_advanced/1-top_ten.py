@@ -13,11 +13,12 @@ def top_ten(subreddit):
 v1.0.0 (by /u/Jazzlike_Day2550)'}, allow_redirects=False)
     if response.status_code != 200:
         print("None")
-    js = response.json()
-    l = js.get("data")
-    for i in l.get("children"):
-        try:
-            print(i.get("data").get("title"))
-        except:
-            print("here")
-            print(i.get("data").get("title").encode())
+    else:
+        js = response.json()
+        l = js.get("data")
+        for i in l.get("children"):
+            try:
+                print(i.get("data").get("title"))
+            except:
+                print("here")
+                print(i.get("data").get("title").encode())
