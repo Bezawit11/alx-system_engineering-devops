@@ -5,6 +5,7 @@ returns top ten hot posts
 import requests
 import json
 
+
 def top_ten(subreddit):
     """ """
     url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
