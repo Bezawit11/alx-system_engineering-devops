@@ -15,9 +15,6 @@ v1.0.0 (by /u/Jazzlike_Day2550)'}, allow_redirects=False)
         print("None")
     else:
         js = response.json()
-        l = js.get("data")
-        for i in l.get("children"):
-            try:
-                print(i.get("data").get("title"))
-            except:
-                print(i.get("data").get("title").encode())
+        titles_ = js.get('data').get('children')
+        for title_ in titles_:
+            print(title_.get('data').get('title'))
