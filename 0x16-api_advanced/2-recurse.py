@@ -7,7 +7,7 @@ import requests
 
 
 def recurse(subreddit, hot_list=[], after=None):
-    """ recursive function that queries the Reddit API and returns a 
+    """ recursive function that queries the Reddit API and returns a
     list containing the titles of all hot articles for a given subreddit
     """
     url = 'https://www.reddit.com/r/{}/hot.json?'.format(subreddit)
@@ -23,5 +23,5 @@ v1.0.0 (by /u/Jazzlike_Day2550)'}, params=parameter, allow_redirects=False)
         recurse(subreddit, hot_list, after)
     for i in l.get("children"):
         title = i.get("data").get("title")
-        hot_list.append(title)  
+        hot_list.append(title)
     return hot_list
