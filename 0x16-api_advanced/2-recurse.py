@@ -16,10 +16,9 @@ v1.0.0 (by /u/Jazzlike_Day2550)'}, params=parameter, allow_redirects=False)
     js = response.json()
     l = js.get("data")
     after = l.get("after")
-    for i in l.get("children"):
-        title = i.get("data").get("title")
-        hot_list.append(title)
     if after is not None:
         recurse(subreddit, hot_list, after)
-    else:    
-        return hot_list
+    for i in l.get("children"):
+        title = i.get("data").get("title")
+        hot_list.append(title)  
+    return hot_list
