@@ -2,8 +2,8 @@
 """
 returns top ten hot posts
 """
-import requests
 import json
+import requests
 
 
 def top_ten(subreddit):
