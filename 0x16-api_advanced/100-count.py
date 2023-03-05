@@ -5,8 +5,8 @@ returns a list containing the titles of all hot articles
 import json
 import requests
 
-dict = {}
-def count_words(subreddit, word_list, after=None):
+
+def count_words(subreddit, word_list, after=None, d={}):
     """ recursive function that queries the Reddit API and returns a
     list containing the titles of all hot articles for a given subreddit
     """
@@ -19,14 +19,14 @@ v1.0.0 (by /u/Jazzlike_Day2550)'}, params=parameter, allow_redirects=False)
     js = response.json()
     l = js.get("data")
     after = l.get("after")
-    for j in word_list:
-        global dict[j] = 0
     if after is not None:
-        count_words(subreddit, word_list, after):
+        count_words(subreddit, word_list, after, d)
     for i in l.get("children"):
         title = i.get("data").get("title")
-        for k in my_list:
+        for k in word_list:
             if k in title:
-                global dict[k] = dict[j] + 1
-    print(dict)
-    
+                if k in d:
+                    d[k] = d[k] + 1
+                else:
+                    d[k] = 1
+    return d
