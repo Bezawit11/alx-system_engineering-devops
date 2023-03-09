@@ -9,6 +9,7 @@ server {
         proxy_pass  http://0.0.0.0:5001/number_odd_or_even/$1;
     }
     location = / {
+        # inside sites-available i added a new service then addes access log and error log locations there
         proxy_pass  http://0.0.0.0:5003/2-hbnb/;
     }
 }
