@@ -1,1 +1,14 @@
-server
+server {
+    listen 80;
+    server_name 3.86.18.132;
+    location = /airbnb-onepage/ {
+        include proxy_params;
+        proxy_pass  http://0.0.0.0:5000/airbnb-onepage/;
+    }
+    location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+        proxy_pass  http://0.0.0.0:5001/number_odd_or_even/$1;
+    }
+    location = / {
+        proxy_pass  http://0.0.0.0:5003/2-hbnb/;
+    }
+}
